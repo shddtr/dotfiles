@@ -1,9 +1,30 @@
 ;;;; パッケージ設定
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
+(package-refresh-contents)
+
+(package-install 'auto-complete)
+(package-install 'bison-mode)
+(package-install 'elixir-mode)
+(package-install 'go-mode)
+(package-install 'helm-ag)
+(package-install 'ido-migemo)
+(package-install 'ido-ubiquitous)
+(package-install 'ido-vertical-mode)
+(package-install 'image+)
+(package-install 'inf-ruby)
+(package-install 'magit)
+(package-install 'markdown-mode)
+(package-install 'org)
+(package-install 'org-plus-contrib)
+(package-install 'paredit)
+(package-install 'ripgrep)
+(package-install 'seeing-is-believing)
+(package-install 'smex)
+(package-install 'trr)
+(package-install 'wgrep)
 
 ;; (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/elisp/")
@@ -570,9 +591,6 @@ message to display, so there is one "
 (setq key-chord-two-keys-delay 0.04)
 (key-chord-mode 1)
 (key-chord-define-global "jk" 'view-mode)
-
-(require 'package)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 ;;; org-mode
 ;; org-modeの初期化
