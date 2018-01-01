@@ -1,0 +1,2 @@
+;; Elixir
+(require 'elixir-mode)
