@@ -22,6 +22,7 @@
 (el-get-bundle color-moccur)
 (el-get-bundle moccur-edit)
 (el-get-bundle helm-ag)
+(el-get-bundle projectile)
 
 ;;; Ido
 (el-get-bundle ido-ubiquitous)

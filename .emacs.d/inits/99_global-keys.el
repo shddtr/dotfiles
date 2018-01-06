@@ -20,6 +20,7 @@
 (global-set-key [delete] 'delete-char)
 (global-set-key "\C-cg" 'moccur-grep-find)
 (global-set-key "\C-cr" 'helm-ag)
+(global-set-key "\C-cp" 'helm-projectile-ag)
 (global-set-key "\C-xe" 'eval-region)
 (if (eq system-type 'darwin)
     (progn

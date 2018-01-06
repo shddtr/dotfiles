@@ -43,35 +43,24 @@
 ;; ;;; Migemoが効いていることを示すプロンプト
 ;; (setq ido-migemo-prompt-string "Migemo|")
 
-;;; grep
+;;;; grep
+
+;;; moccur
 (require 'color-moccur)
 (load "moccur-edit")
-;;; ripgrep (helm-agから使うときにはいらないみたい)
-;;; rgバイナリの位置
-(setq ripgrep-executable "~/bin/rg")
-;;; rgに渡すオプション
-(setq ripgrep-arguments '("-S"))
 
 ;;; helm-ag + ripgrep
 (require 'helm)
-;;; ag以外の検索コマンドも使える
-;; (setq helm-ag-base-command "grep -rin")
-;; (setq helm-ag-base-command "csearch -n")
-;; (setq helm-ag-base-command "pt --nocolor --nogroup")
-(setq helm-ag-base-command "rg --vimgrep --no-heading")
-;;; 現在のシンボルをデフォルトのクエリにする
+;; agではなくripgrepを使う
+(setq helm-ag-base-command "rg --vimgrep --no-heading --hidden")
+;; 現在のシンボルをデフォルトのクエリにする
 (setq helm-ag-insert-at-point 'symbol)
-
-;; (defun helm-ag-dot-emacs ()
-;;   ".emacs.d以下を検索"
-;;   (interactive)
-;;   (helm-ag "~/.emacs.d/"))
+;; 現在のプロジェクト以下を探す
 (require 'projectile nil t)
-;; (defun helm-projectile-ag ()
-;;   "Projectileと連携"
-;;   (interactive)
-;;   (helm-ag (projectile-project-root)))
-;; (helm-ag "~/.emacs.d/")
+(defun helm-projectile-ag ()
+  "Projectileと連携"
+  (interactive)
+  (helm-ag (projectile-project-root)))
 
 ;;; バックアップファイルを作らない
 (setq make-backup-files nil)
