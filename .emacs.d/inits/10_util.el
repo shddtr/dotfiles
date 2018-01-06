@@ -43,27 +43,24 @@
 ;; ;;; Migemoが効いていることを示すプロンプト
 ;; (setq ido-migemo-prompt-string "Migemo|")
 
-;; ;;; grep
-;; (require 'color-moccur)
-;; (load "moccur-edit")
-;; helm-ag + ripgrepに移行
+;;; grep
+(require 'color-moccur)
+(load "moccur-edit")
 ;;; ripgrep (helm-agから使うときにはいらないみたい)
 ;;; rgバイナリの位置
 (setq ripgrep-executable "~/bin/rg")
 ;;; rgに渡すオプション
 (setq ripgrep-arguments '("-S"))
 
-;; ;;; helm-ag
-;; (require 'helm)
-;; ;;; ag以外の検索コマンドも使える
-;; ;; (setq helm-ag-base-command "grep -rin")
-;; ;; (setq helm-ag-base-command "csearch -n")
-;; ;; (setq helm-ag-base-command "pt --nocolor --nogroup")
-;; (setq helm-ag-base-command "rg --vimgrep --no-heading")
-;; ;;; 現在のシンボルをデフォルトのクエリにする
-;; (setq helm-ag-insert-at-point 'symbol)
-
-;;; C-M-gはちょうどあいてる
+;;; helm-ag + ripgrep
+(require 'helm)
+;;; ag以外の検索コマンドも使える
+;; (setq helm-ag-base-command "grep -rin")
+;; (setq helm-ag-base-command "csearch -n")
+;; (setq helm-ag-base-command "pt --nocolor --nogroup")
+(setq helm-ag-base-command "rg --vimgrep --no-heading")
+;;; 現在のシンボルをデフォルトのクエリにする
+(setq helm-ag-insert-at-point 'symbol)
 
 ;; (defun helm-ag-dot-emacs ()
 ;;   ".emacs.d以下を検索"
@@ -76,13 +73,14 @@
 ;;   (helm-ag (projectile-project-root)))
 ;; (helm-ag "~/.emacs.d/")
 
+;;; バックアップファイルを作らない
 (setq make-backup-files nil)
 ;; (setq backup-inhibited t)
 
 ;;; outline-mode
 (add-to-list 'auto-mode-alist '("\\.ol$" . outline-mode))
 
-;;; ignore case
+;;; 大文字小文字を区別しない
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 
@@ -138,10 +136,8 @@
 ;; int a   = 3;                // hoge
 ;; int abc = 4;                // fuga
 
-
 ;;; scroll行数
-;; (setq-default scroll-step 1)
-;; (setq-default scroll-conservatively 10000)
+(setq-default scroll-conservatively 1)
 
 ;;; EditorConfig
 (editorconfig-mode 1)

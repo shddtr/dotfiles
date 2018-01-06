@@ -18,7 +18,8 @@
 (global-set-key [(ctrl shift i)] 'imenu)
 (global-set-key [(ctrl shift t)] 'toggle-truncate-lines)
 (global-set-key [delete] 'delete-char)
-;; (global-set-key "\C-cg" 'moccur-grep-find)
+(global-set-key "\C-cg" 'moccur-grep-find)
+(global-set-key "\C-cr" 'helm-ag)
 (global-set-key "\C-xe" 'eval-region)
 (if (eq system-type 'darwin)
     (progn
@@ -28,7 +29,6 @@
 (global-set-key "\C-cW" 'sdic-describe-word-at-point)
 (global-set-key (kbd "S-SPC") 'toggle-input-method)
 (global-set-key (kbd "C-x g") 'magit-status)
-;; (global-set-key "\C-cg" 'helm-ag)
 (global-set-key (kbd "C-M-k") 'backward-kill-sexp) ;推奨
 ;; (define-key helm-map (kbd "C-h") 'delete-backward-char)
 ;; (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)

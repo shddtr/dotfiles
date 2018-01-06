@@ -11,29 +11,58 @@
 
 (el-get-bundle auto-complete)
 (el-get-bundle pkg-info)
+
+;;; Elixir
 (el-get-bundle elixir-mode)
+
+;;; Go
 (el-get-bundle go-mode)
-;; (el-get-bundle helm-ag)
-;; (el-get-bundle anything)
-(el-get-bundle migemo)
-;; (el-get-bundle ido-migemo)
+
+;;; Grep
+(el-get-bundle color-moccur)
+(el-get-bundle moccur-edit)
+(el-get-bundle helm-ag)
+
+;;; Ido
 (el-get-bundle ido-ubiquitous)
 (el-get-bundle ido-vertical-mode)
+(el-get-bundle smex) ; あいまいマッチ
+
+;;; Migemo
+(el-get-bundle migemo)
+;; (el-get-bundle ido-migemo)
+
 (el-get-bundle image+)
-(el-get-bundle inf-ruby)
+
 (el-get-bundle markdown-mode)
+
 (el-get-bundle key-chord)
+
+;;; Org
 ;; (el-get-bundle org)
 ;; (el-get-bundle org-plus-contrib)
+
+;;; Lisp
 ;; (el-get-bundle paredit)
-;; (el-get-bundle ripgrep)
+
+;;; Ruby
+(el-get-bundle inf-ruby)
 ;; (el-get-bundle seeing-is-believing)
-(el-get-bundle smex)
-;; (el-get-bundle trr)
+
 ;; (el-get-bundle wgrep)
+
+;;; C++
 ;; (el-get-bundle flycheck)
+
+;;; EditorConfig
 (el-get-bundle editorconfig)
+
+;;; Plant UML
 (el-get-bundle plantuml-mode)
+
+;;; JavaScript
+(el-get-bundle web-beautify)
+;; npm -g install js-beautify
 (el-get-bundle js2-mode)
 (el-get-bundle tern)
 (el-get-bundle tern-auto-complete)

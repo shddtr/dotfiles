@@ -2,8 +2,7 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (setq inhibit-startup-message t)
-;; line number
-;; (global-linum-mode t)
+;; (global-linum-mode t) ; line number
 (show-paren-mode 1)
 (set-scroll-bar-mode 'right)
 (global-hl-line-mode 1)
@@ -28,7 +27,8 @@
 
 (setq default-frame-alist
       (append (list '(foreground-color . "snow")
-                    '(background-color . "#000055")
+                    ;; '(background-color . "#000055")
+                    '(background-color . "#232323")
                     '(cursor-color . "orange")
                     ;; '(alpha . 90)
                     '(width . 82)
